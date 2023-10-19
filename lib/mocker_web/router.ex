@@ -3,6 +3,7 @@ defmodule MockerWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug, origins: ["*"]
   end
 
   scope "/api", MockerWeb do

@@ -2,8 +2,8 @@ defmodule MockerWeb.Router do
   use MockerWeb, :router
 
   pipeline :api do
+    plug CORSPlug, origin: ["*"]
     plug :accepts, ["json"]
-    plug CORSPlug, origin: ["https://mocker-front-production.up.railway.app"]
   end
 
   scope "/api", MockerWeb do

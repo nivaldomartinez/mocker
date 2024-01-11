@@ -25,7 +25,9 @@ defmodule MockerWeb.SourceJSON do
     {:ok, sourceData} = Jason.decode(source.data)
     %{
       id: source.id,
-      data: sourceData
+      data: sourceData,
+      statusCode: source.statusCode,
+      type: source.type
     }
   end
 end

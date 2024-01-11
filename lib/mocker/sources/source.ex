@@ -6,6 +6,8 @@ defmodule Mocker.Sources.Source do
   @foreign_key_type :binary_id
   schema "sources" do
     field :data, :string
+    field :type, :string
+    field :statusCode, :integer
 
     timestamps()
   end
@@ -13,7 +15,7 @@ defmodule Mocker.Sources.Source do
   @doc false
   def changeset(source, attrs) do
     source
-    |> cast(attrs, [:data])
+    |> cast(attrs, [:data, :type, :statusCode])
     |> validate_required([:data])
   end
 end

@@ -12,9 +12,7 @@ defmodule MockerWeb.SourceJSON do
   Renders a single source.
   """
   def show(%{source: source}) do
-    %{data: sourceString} = source
-    {:ok, sourceData} = Jason.decode(sourceString)
-    sourceData
+    data(source)
   end
 
   def created(%{source: source}) do
